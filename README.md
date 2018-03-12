@@ -1,2 +1,2 @@
-# algorithm-practice
-Algorithm and data structure practice
+# 算法实践
+算法与数据结构个人实践练习
