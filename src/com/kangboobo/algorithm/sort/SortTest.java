@@ -17,7 +17,7 @@ public class SortTest {
 
 		show(a);
 
-		QuikSort.sort(a, 0, N-1);
+		QuikSort.sort2(a, 0, N-1);
 
 		show(a);
 	}
