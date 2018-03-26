@@ -5,17 +5,21 @@ package com.kangboobo.algorithm.sort;
  * 		冒泡排序法升级版，采用分治和递归的思想
  *		每趟递归选择一个基准元素（待排序数组的第一个元素），将小于基准元素的都交换到左边，大于基准元素的都交换的右边
  *		再对左右两个子数组进行相同的方式排序
- *分类：内部比较排序
- *循环次数：
- *交换次数：
- *时间复杂度：O(nlogn) --> O(n2)
- *空间复杂度：O(logn) --> O(n),取决于递归树的深度
- *稳定性：不稳定
+ * 分类：内部比较排序
+ * 循环次数：
+ * 交换次数：
+ * 时间复杂度：O(nlogn) --> O(n2)
+ * 空间复杂度：O(logn) --> O(n),取决于递归树的深度
+ * 稳定性：不稳定
  *
  * @author kangboobo
  *
  */
 public class QuikSort {
+
+	public static void sort(int[] arr){
+		sort1(arr, 0, arr.length-1);
+	}
 
 	/**
 	 * 实现方式1
