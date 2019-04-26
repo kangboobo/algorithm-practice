@@ -1,6 +1,6 @@
-package com.kangboobo.algorithm.sort;
+package com.kangboobo.algorithm.sort.Test;
 
-import java.util.Random;
+import com.kangboobo.algorithm.sort.impl.ShellSort;
 
 /***
  * @description
@@ -17,21 +17,21 @@ public class SortTest {
 
 		show(a);
 
-		ShellSort.sort(a);
+		new ShellSort().sort(a);
 
 		show(a);
 	}
 
-	public static void getData(int[] a){
+	public static void getData(int[] a) {
 		for (int i = 0; i < a.length; i++) {
-			a[i] = (int) (Math.random()*10000);
+			a[i] = (int) (Math.random() * 10000);
 		}
 	}
 
-	public static void show(int[] a){
+	public static void show(int[] a) {
 		for (int i = 0; i < a.length; i++) {
-			if(i < a.length -1)
-				System.out.print(a[i]+",");
+			if (i < a.length - 1)
+				System.out.print(a[i] + ",");
 			else
 				System.out.print(a[i]);
 		}

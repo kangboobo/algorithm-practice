@@ -1,23 +1,40 @@
-package com.kangboobo.algorithm.sort;
+package com.kangboobo.algorithm.sort.impl;
+
+import com.kangboobo.algorithm.sort.Sort;
+
 /***
- * @description 希尔排序法
- * 		插入排序法升级版，解决插入排序每次只能移动一位的低效操作
- * 		选择一个增量序列hk,hk-1...h3,h2,h1(h1=1)
- * 		第一轮按照hk的步长将数组划分为n/hk+1个子数组，对每个子数组进行插入排序
- * 		最后一轮时，相当于对几乎排序好的数组进行插入排序
+ * @description 希尔排序算法
+ *
+ * 插入排序法升级版，解决插入排序每次只能移动一位的低效操作
+ *
+ * 选择一个增量序列hk,hk-1...h3,h2,h1(h1=1)
+ *
+ * 第一轮按照hk的步长将数组划分为n/hk+1个子数组，对每个子数组进行插入排序
+ *
+ * 最后一轮时，相当于对几乎排序好的数组进行插入排序
+ *
  * 分类：内部比较排序
+ *
  * 循环次数：
+ *
  * 交换次数：
- * 时间复杂度：O(n) --> O(n(logn)^2)取决于步长序列
- * 空间复杂度：O(1)
+ *
+ * 时间复杂度：O(n) --> O(n(logn)^2)取决于步长序列，空间复杂度：O(1)
+ *
  * 稳定性：不稳定
  *
  * @author kangboobo
  *
  */
-public class ShellSort {
+public class ShellSort implements Sort{
 
-	public static void sort(int[] arr){
+	/**
+	 * 排序方法
+	 *
+	 * @param arr
+	 */
+	@Override
+	public void sort(int[] arr){
 		int h = 1;
 	    while (h <= arr.length) // 根据数组的长度确定增量序列的最大值
 	    {
@@ -46,7 +63,8 @@ public class ShellSort {
 	 * @param from
 	 * @param to
 	 */
-	public static void exchange(int[] arr, int from, int to) {
+	@Override
+	public void exchange(int[] arr, int from, int to) {
 		int temp = arr[from];
 		arr[from] = arr[to];
 		arr[to] = temp;
