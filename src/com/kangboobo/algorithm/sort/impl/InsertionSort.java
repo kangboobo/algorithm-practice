@@ -13,7 +13,7 @@ import com.kangboobo.algorithm.sort.Sort;
  *
  *              交换次数：取决于倒置数
  *
- *              时间复杂度：O(n2) 空间复杂度：O(1)
+ *              时间复杂度：0(n) -> O(n2) 空间复杂度：O(1)
  *
  *              稳定性：稳定
  *

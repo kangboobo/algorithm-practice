@@ -10,7 +10,8 @@ import com.kangboobo.algorithm.sort.Sort;
  * @description 堆排序，也可以理解为二叉树排序，这里的堆分为两种，一种是大顶堆，一种是小顶堆，我们所有的排序方法都以升序为主，其实倒序原理也都差不多，
  * 所以这里我们主要分析的是大顶堆。大顶堆就是根节点不小于他的两个子节点
  * <p>
- * 时间复杂度：O(n(log2n)，空间复杂度：O(1)
+ * 时间复杂度：O(n * log n)，空间复杂度：O(1)
+ * 稳定性：不稳定
  */
 public class HeapSort implements Sort {
 

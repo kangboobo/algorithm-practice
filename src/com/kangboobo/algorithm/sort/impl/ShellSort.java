@@ -19,7 +19,7 @@ import com.kangboobo.algorithm.sort.Sort;
  *
  * 交换次数：
  *
- * 时间复杂度：O(n(log2n) --> O(n2))取决于步长序列，空间复杂度：O(1)
+ * 时间复杂度：O(n * log n） --> O(n * log2n)取决于步长序列，空间复杂度：O(1)
  *
  * 稳定性：不稳定
  *
