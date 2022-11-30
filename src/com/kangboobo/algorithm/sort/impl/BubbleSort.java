@@ -22,34 +22,34 @@ import com.kangboobo.algorithm.sort.Sort;
  */
 public class BubbleSort implements Sort {
 
-	/**
-	 * 排序方法
-	 *
-	 * @param arr
-	 */
-	@Override
-	public void sort(int[] arr) {
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length - i; j++) {
-				if (arr[j] < arr[j + 1]) {
-					exchange(arr, j, j + 1);
-				}
-			}
-		}
-	}
+    /**
+     * 排序方法
+     *
+     * @param arr
+     */
+    @Override
+    public void sort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - i; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    exchange(arr, j, j + 1);
+                }
+            }
+        }
+    }
 
-	/**
-	 * 交换from和to下标的元素位置
-	 *
-	 * @param arr
-	 * @param from
-	 * @param to
-	 */
-	@Override
-	public void exchange(int[] arr, int from, int to) {
-		int temp = arr[from];
-		arr[from] = arr[to];
-		arr[to] = temp;
-	}
+    /**
+     * 交换from和to下标的元素位置
+     *
+     * @param arr
+     * @param from
+     * @param to
+     */
+    @Override
+    public void exchange(int[] arr, int from, int to) {
+        int temp = arr[from];
+        arr[from] = arr[to];
+        arr[to] = temp;
+    }
 
 }

@@ -19,54 +19,52 @@ import com.kangboobo.algorithm.sort.Sort;
  *
  * 交换次数：
  *
- * 时间复杂度：O(n) --> O(n(logn)^2)取决于步长序列，空间复杂度：O(1)
+ * 时间复杂度：O(n(log2n) --> O(n2))取决于步长序列，空间复杂度：O(1)
  *
  * 稳定性：不稳定
  *
  * @author kangboobo
  *
  */
-public class ShellSort implements Sort{
+public class ShellSort implements Sort {
 
-	/**
-	 * 排序方法
-	 *
-	 * @param arr
-	 */
-	@Override
-	public void sort(int[] arr){
-		int h = 1;
-	    while (h <= arr.length) // 根据数组的长度确定增量序列的最大值
-	    {
-	        h = 3 * h + 1;
-	    }
+    /**
+     * 排序方法
+     *
+     * @param arr
+     */
+    @Override
+    public void sort(int[] arr) {
+        int h = 1;
+        // 根据数组的长度确定增量序列的最大值
+        while (h <= arr.length) {
+            h = 3 * h + 1;
+        }
+        while (h >= 1) {
+            // 每轮按照增量序列作为步长进行插入排序
+            for (int i = h; i < arr.length; i++) {
+                for (int j = i; j >= h; j -= h) {
+                    if (arr[j] < arr[j - h]) {
+                        exchange(arr, j, j - h);
+                    }
+                }
+            }
+            // 递减增量序列，进行下一轮排序
+            h = (h - 1) / 3;
+        }
+    }
 
-	    while (h >= 1)
-	    {
-	    	// 每轮按照增量序列作为步长进行插入排序
-	        for (int i = h; i < arr.length; i++)
-	        {
-	        	for(int j = i; j >= h; j -= h){
-	        		if(arr[j] < arr[j-h]){
-	        			exchange(arr,j,j-h);
-	        		}
-	            }
-	        }
-
-	        h = (h - 1) / 3;    // 递减增量序列，进行下一轮排序
-	    }
-	}
-
-	/**
-	 * 交换from和to下标的元素位置
-	 * @param arr
-	 * @param from
-	 * @param to
-	 */
-	@Override
-	public void exchange(int[] arr, int from, int to) {
-		int temp = arr[from];
-		arr[from] = arr[to];
-		arr[to] = temp;
-	}
+    /**
+     * 交换from和to下标的元素位置
+     *
+     * @param arr
+     * @param from
+     * @param to
+     */
+    @Override
+    public void exchange(int[] arr, int from, int to) {
+        int temp = arr[from];
+        arr[from] = arr[to];
+        arr[to] = temp;
+    }
 }

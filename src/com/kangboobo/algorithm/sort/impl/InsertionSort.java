@@ -5,7 +5,7 @@ import com.kangboobo.algorithm.sort.Sort;
 /***
  * @description 插入排序算法
  *
- *              外循环对数组中前2个到n个子数组进行排序，每轮仅将子数组排序，内循环两两比较，将较小的元素左移
+ *              外循环对数组中前n个子数组进行排序，每轮仅将第n+1个元素添加进子数组中进行排序，插入到合适的位置
  *
  *              分类：内部比较排序
  *
@@ -30,7 +30,7 @@ public class InsertionSort implements Sort {
 	@Override
 	public void sort(int[] arr) {
 		for (int i = 1; i < arr.length; i++) {
-			for (int j = i; j >= i; j--) {
+			for (int j = i; j > 0; j--) {
 				if (arr[j] < arr[j - 1]) {
 					exchange(arr, j, j - 1);
 				} else {
