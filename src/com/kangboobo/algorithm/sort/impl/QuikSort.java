@@ -100,7 +100,9 @@ public class QuikSort implements Sort {
         for (int i = left + 1; i <= right; i++) {
             if (arr[i] < key) {
                 low++;
-                exchange(arr, low, i);// 把小于基准的元素放到子数组末尾
+                if (low != i) {
+                    exchange(arr, low, i);// 把小于基准的元素放到子数组末尾
+                }
             }
         }
         // 最后把基准放到子数组的最后后边，右边的子数组既是大于基准的子数组
